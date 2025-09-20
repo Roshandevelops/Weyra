@@ -1,3 +1,5 @@
+import 'package:clot/presentation/splash/splash_screen.dart';
+import 'package:clot/theme/app_theme.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -7,9 +9,15 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp();
+    return MaterialApp(
+      title: 'Weyra',
+      themeMode: ThemeMode.system,
+      theme: AppTheme.lightTheme,
+      darkTheme: AppTheme.darkTheme,
+      debugShowCheckedModeBanner: false,
+      home: const SplashScreen(),
+    );
   }
 }
