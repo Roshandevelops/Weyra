@@ -1,3 +1,4 @@
+import 'package:clot/presentation/auth/about/about_screen.dart';
 import 'package:clot/utils/constants/app_colors.dart';
 import 'package:clot/widgets/app_button.dart';
 import 'package:clot/widgets/textform_field_widget.dart';
@@ -14,7 +15,6 @@ class CreateAccountScreen extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 24),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
-          // padding: const EdgeInsets.symmetric(horizontal: 24),
           children: [
             const SizedBox(
               height: 63,
@@ -65,7 +65,13 @@ class CreateAccountScreen extends StatelessWidget {
             ),
             AppButton(
               buttonText: "Continue",
-              onTap: () {},
+              onTap: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) => AboutScreen(),
+                  ),
+                );
+              },
             ),
           ],
         ),

@@ -4,12 +4,18 @@ import 'package:flutter/material.dart';
 class AppButton extends StatelessWidget {
   const AppButton({
     super.key,
-    required this.buttonText,
-    required this.onTap,
+    this.buttonText,
+    this.onTap,
+    this.backgroundColor = KAppColors.primaryColor,
+    this.textColor = KAppColors.kwhite,
   });
 
-  final String buttonText;
+  final String? buttonText;
   final void Function()? onTap;
+
+  final Color? textColor;
+
+  final Color backgroundColor;
   // final double? width;
 
   @override
@@ -20,14 +26,14 @@ class AppButton extends StatelessWidget {
         height: 50,
         width: double.infinity,
         decoration: BoxDecoration(
-          color: KAppColors.primaryColor,
+          color: backgroundColor,
           borderRadius: BorderRadius.circular(100),
         ),
         child: Center(
           child: Text(
-            buttonText,
+            buttonText ?? "",
             style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                  color: Colors.white,
+                  color: textColor,
                   fontWeight: FontWeight.w500,
                 ),
           ),

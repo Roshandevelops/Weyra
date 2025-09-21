@@ -4,8 +4,8 @@ import 'package:flutter/material.dart';
 class TextformFieldWidget extends StatelessWidget {
   const TextformFieldWidget({
     super.key,
-    required this.labelText,
-    required this.hintText,
+    this.labelText,
+    this.hintText,
   });
 
   final String? labelText;

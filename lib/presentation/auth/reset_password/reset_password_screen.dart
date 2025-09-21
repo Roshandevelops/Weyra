@@ -22,6 +22,7 @@ class ResetPasswordScreen extends StatelessWidget {
             const SizedBox(height: 24),
             Text(
               'We Sent you an Email to reset your password.',
+              textAlign: TextAlign.center,
               style: Theme.of(context).textTheme.headlineMedium,
             ),
             const SizedBox(height: 24),
