@@ -1,7 +1,7 @@
 import 'package:clot/presentation/auth/create_account/create_account_screen.dart';
 import 'package:clot/presentation/auth/forgot_password/forgot_password_screen.dart';
-import 'package:clot/widgets/app_button.dart';
-import 'package:clot/widgets/textform_field_widget.dart';
+import 'package:clot/widgets/app_button_widget.dart';
+import 'package:clot/widgets/app_textform_field_widget.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
@@ -32,7 +32,7 @@ class SignInScreen extends StatelessWidget {
               hintText: "password",
             ),
             const SizedBox(height: 16),
-            AppButton(
+            AppButtonWidget(
               buttonText: "Continue",
               onTap: () {},
             ),

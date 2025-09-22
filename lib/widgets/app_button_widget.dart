@@ -1,8 +1,8 @@
 import 'package:clot/utils/constants/app_colors.dart';
 import 'package:flutter/material.dart';
 
-class AppButton extends StatelessWidget {
-  const AppButton({
+class AppButtonWidget extends StatelessWidget {
+  const AppButtonWidget({
     super.key,
     this.buttonText,
     this.onTap,

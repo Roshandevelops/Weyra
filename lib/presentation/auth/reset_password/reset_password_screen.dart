@@ -1,6 +1,6 @@
 import 'package:clot/presentation/auth/signin/signin_screen.dart';
 import 'package:clot/utils/constants/image_strings.dart';
-import 'package:clot/widgets/app_button.dart';
+import 'package:clot/widgets/app_button_widget.dart';
 import 'package:flutter/material.dart';
 
 class ResetPasswordScreen extends StatelessWidget {
@@ -28,7 +28,7 @@ class ResetPasswordScreen extends StatelessWidget {
             const SizedBox(height: 24),
             SizedBox(
               width: 160,
-              child: AppButton(
+              child: AppButtonWidget(
                 buttonText: "Return to Login",
                 onTap: () {
                   Navigator.of(context).pushReplacement(

@@ -1,7 +1,7 @@
 import 'package:clot/presentation/auth/reset_password/reset_password_screen.dart';
 import 'package:clot/utils/constants/app_colors.dart';
-import 'package:clot/widgets/app_button.dart';
-import 'package:clot/widgets/textform_field_widget.dart';
+import 'package:clot/widgets/app_button_widget.dart';
+import 'package:clot/widgets/app_textform_field_widget.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -44,7 +44,7 @@ class ForgotPasswordScreen extends StatelessWidget {
             hintText: "Enter Email Address",
           ),
           const SizedBox(height: 16),
-          AppButton(
+          AppButtonWidget(
             buttonText: "Continue",
             onTap: () {
               Navigator.of(context).push(

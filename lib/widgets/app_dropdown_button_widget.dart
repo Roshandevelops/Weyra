@@ -2,11 +2,11 @@ import 'package:clot/utils/constants/app_colors.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class AppDropdownButton extends StatefulWidget {
-  const AppDropdownButton({
+class AppDropdownButtonWidget extends StatefulWidget {
+  const AppDropdownButtonWidget({
     super.key,
     required this.items,
-    this.onChanged,
+    required this.onChanged,
     this.fillColor = KAppColors.kFillColor,
     this.border,
   });
@@ -16,10 +16,11 @@ class AppDropdownButton extends StatefulWidget {
   final void Function(Object?)? onChanged;
 
   @override
-  State<AppDropdownButton> createState() => _AppDropdownButtonState();
+  State<AppDropdownButtonWidget> createState() =>
+      _AppDropdownButtonWidgetState();
 }
 
-class _AppDropdownButtonState extends State<AppDropdownButton> {
+class _AppDropdownButtonWidgetState extends State<AppDropdownButtonWidget> {
   @override
   Widget build(BuildContext context) {
     return DropdownButtonFormField(
