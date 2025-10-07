@@ -1,5 +1,6 @@
 import 'package:clot/presentation/auth/create_account/create_account_screen.dart';
 import 'package:clot/presentation/auth/forgot_password/forgot_password_screen.dart';
+import 'package:clot/presentation/home/home_screen.dart';
 import 'package:clot/widgets/app_button_widget.dart';
 import 'package:clot/widgets/app_textform_field_widget.dart';
 import 'package:flutter/gestures.dart';
@@ -34,7 +35,15 @@ class SignInScreen extends StatelessWidget {
             const SizedBox(height: 16),
             AppButtonWidget(
               buttonText: "Continue",
-              onTap: () {},
+              onTap: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) {
+                      return HomeScreen();
+                    },
+                  ),
+                );
+              },
             ),
             const SizedBox(height: 20),
             Text.rich(

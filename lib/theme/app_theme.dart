@@ -23,6 +23,7 @@ class AppTheme {
     inputDecorationTheme: KTextFormFieldTheme.lightInputDecorationTheme,
     checkboxTheme: KCheckboxTheme.lightCheckBoxTheme,
   );
+
   static ThemeData darkTheme = ThemeData(
     useMaterial3: true,
     brightness: Brightness.dark,

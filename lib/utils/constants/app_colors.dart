@@ -15,6 +15,6 @@ class KAppColors {
 
   /// textField fill colors
 
-  static Color labelColor = const Color(0xff272727).withOpacity(0.5);
-  static Color hintColor = const Color(0xff272727).withOpacity(0.5);
+  static Color hintLabelColor = const Color(0xff272727).withOpacity(0.5);
+  static Color searchFieldItemColor = const Color(0xff272727);
 }
