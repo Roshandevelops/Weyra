@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 
 class SectionHeader extends StatelessWidget {
-  const SectionHeader({super.key, required this.leftHeader});
+  const SectionHeader({
+    super.key,
+    required this.leftHeader,
+  });
   final String leftHeader;
 
   @override
@@ -11,12 +14,12 @@ class SectionHeader extends StatelessWidget {
       children: [
         Text(
           leftHeader,
-          style: TextStyle(
+          style: const TextStyle(
             fontWeight: FontWeight.w700,
             fontFamily: "Gabarito",
           ),
         ),
-        Text("See All"),
+        const Text("See All"),
       ],
     );
   }

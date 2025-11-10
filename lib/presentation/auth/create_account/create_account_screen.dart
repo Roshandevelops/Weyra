@@ -29,9 +29,9 @@ class CreateAccountScreen extends StatelessWidget {
                 child: Container(
                   height: 40,
                   width: 40,
-                  decoration: BoxDecoration(
+                  decoration:const BoxDecoration(
                       color: KAppColors.kFillColor, shape: BoxShape.circle),
-                  child: Icon(CupertinoIcons.left_chevron),
+                  child:const Icon(CupertinoIcons.left_chevron),
                 ),
               ),
             ),
@@ -68,7 +68,7 @@ class CreateAccountScreen extends StatelessWidget {
               onTap: () {
                 Navigator.of(context).push(
                   MaterialPageRoute(
-                    builder: (context) => DetailsScreen(),
+                    builder: (context) =>const DetailsScreen(),
                   ),
                 );
               },

@@ -39,7 +39,7 @@ class SignInScreen extends StatelessWidget {
                 Navigator.of(context).push(
                   MaterialPageRoute(
                     builder: (context) {
-                      return HomeScreen();
+                      return const HomeScreen();
                     },
                   ),
                 );
@@ -75,7 +75,7 @@ class SignInScreen extends StatelessWidget {
             Text.rich(
               TextSpan(
                 text: "Forgot Password ? ",
-                style: TextStyle(fontWeight: FontWeight.w100),
+                style: const TextStyle(fontWeight: FontWeight.w100),
                 children: [
                   TextSpan(
                     recognizer: TapGestureRecognizer()
@@ -89,7 +89,7 @@ class SignInScreen extends StatelessWidget {
                         );
                       },
                     text: "Reset",
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontSize: 12,
                       fontWeight: FontWeight.w700,
                     ),

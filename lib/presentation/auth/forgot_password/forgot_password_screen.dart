@@ -27,9 +27,9 @@ class ForgotPasswordScreen extends StatelessWidget {
               child: Container(
                 height: 40,
                 width: 40,
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                     color: KAppColors.kFillColor, shape: BoxShape.circle),
-                child: Icon(CupertinoIcons.left_chevron),
+                child: const Icon(CupertinoIcons.left_chevron),
               ),
             ),
           ),

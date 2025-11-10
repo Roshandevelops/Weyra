@@ -22,7 +22,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
       // showAppBar: true,
       body: SingleChildScrollView(
         child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 24),
+          padding: const EdgeInsets.symmetric(horizontal: 24),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -86,6 +86,8 @@ class _DetailsScreenState extends State<DetailsScreen> {
               ),
               const SizedBox(height: 13),
               AppDropdownButtonWidget(
+                hintStyle: Theme.of(context).textTheme.titleSmall,
+                hintText: "Age Range",
                 items: ageRanges.map(
                   (age) {
                     return DropdownMenuItem(

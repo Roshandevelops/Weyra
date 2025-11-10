@@ -11,7 +11,7 @@ class SearchWidget extends StatelessWidget {
       height: 50,
       child: TextformFieldWidget(
         hintText: "Search",
-        hintStyle: TextStyle(
+        hintStyle: const TextStyle(
             color: KAppColors.kblack,
             fontSize: 16,
             fontWeight: FontWeight.w400),
@@ -19,7 +19,7 @@ class SearchWidget extends StatelessWidget {
           borderRadius: BorderRadius.circular(100),
           borderSide: BorderSide.none,
         ),
-        prefixIcon: Icon(
+        prefixIcon: const Icon(
           Icons.search,
           color: KAppColors.kblack,
         ),
