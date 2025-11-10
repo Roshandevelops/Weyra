@@ -5,15 +5,15 @@ class KTextTheme {
   static TextTheme lightTextTheme = TextTheme(
     ///heading
     headlineLarge: const TextStyle().copyWith(
-        fontSize: 32, fontWeight: FontWeight.w700, color: Colors.black),
+        fontSize: 24, fontWeight: FontWeight.w700, color: Colors.black),
     headlineMedium: const TextStyle().copyWith(
-        fontSize: 24, fontWeight: FontWeight.w600, color: Colors.black),
+        fontSize: 20, fontWeight: FontWeight.w600, color: Colors.black),
     headlineSmall: const TextStyle().copyWith(
         fontSize: 18, fontWeight: FontWeight.w600, color: Colors.black),
 
     ///title
     titleLarge: const TextStyle().copyWith(
-        fontSize: 16, fontWeight: FontWeight.w600, color: Colors.black),
+        fontSize: 18, fontWeight: FontWeight.w700, color: Colors.black),
     titleMedium: const TextStyle().copyWith(
         fontSize: 16, fontWeight: FontWeight.w500, color: Colors.black),
     titleSmall: const TextStyle().copyWith(
@@ -47,9 +47,9 @@ class KTextTheme {
   static TextTheme darkTextTheme = TextTheme(
     ///heading
     headlineLarge: const TextStyle().copyWith(
-        fontSize: 32, fontWeight: FontWeight.w700, color: Colors.white),
+        fontSize: 24, fontWeight: FontWeight.w700, color: Colors.white),
     headlineMedium: const TextStyle().copyWith(
-        fontSize: 24, fontWeight: FontWeight.w600, color: Colors.white),
+        fontSize: 20, fontWeight: FontWeight.w600, color: Colors.white),
     headlineSmall: const TextStyle().copyWith(
         fontSize: 18, fontWeight: FontWeight.w600, color: Colors.white),
 

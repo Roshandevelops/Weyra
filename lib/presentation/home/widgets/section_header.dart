@@ -4,8 +4,10 @@ class SectionHeader extends StatelessWidget {
   const SectionHeader({
     super.key,
     required this.leftHeader,
+    required this.onTap,
   });
   final String leftHeader;
+  final void Function()? onTap;
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +21,10 @@ class SectionHeader extends StatelessWidget {
             fontFamily: "Gabarito",
           ),
         ),
-        const Text("See All"),
+        InkWell(
+          onTap: onTap,
+          child: const Text("See All"),
+        ),
       ],
     );
   }

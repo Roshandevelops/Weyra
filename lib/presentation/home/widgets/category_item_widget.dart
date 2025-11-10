@@ -3,7 +3,9 @@ import 'package:clot/utils/constants/app_colors.dart';
 import 'package:flutter/material.dart';
 
 class CategoryItemWidget extends StatelessWidget {
-  const CategoryItemWidget({super.key});
+  const CategoryItemWidget({super.key, required this.onTap});
+
+  final void Function()? onTap;
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +18,10 @@ class CategoryItemWidget extends StatelessWidget {
     ];
     return Column(
       children: [
-        const SectionHeader(leftHeader: "Categories"),
+        SectionHeader(
+          leftHeader: "Categories",
+          onTap: onTap,
+        ),
         const SizedBox(height: 20),
         SizedBox(
           height: 120,
@@ -28,9 +33,15 @@ class CategoryItemWidget extends StatelessWidget {
                 children: [
                   Container(
                     margin: const EdgeInsets.symmetric(horizontal: 10),
-                    height: 80,
-                    width: 80,
+                    height: 60,
+                    width: 60,
                     decoration: BoxDecoration(
+                      image: const DecorationImage(
+                        image: NetworkImage(
+                          "https://bellard.org/bpg/2.png",
+                        ),
+                        fit: BoxFit.cover,
+                      ),
                       color: KAppColors.kFillColor,
                       borderRadius: BorderRadius.circular(60),
                     ),

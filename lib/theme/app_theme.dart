@@ -10,6 +10,9 @@ import 'package:flutter/material.dart';
 
 class AppTheme {
   static ThemeData lightTheme = ThemeData(
+    bottomNavigationBarTheme: const BottomNavigationBarThemeData(
+      backgroundColor: KAppColors.kwhite,
+    ),
     useMaterial3: true,
     brightness: Brightness.light,
     primaryColor: Colors.white,
@@ -25,12 +28,15 @@ class AppTheme {
     checkboxTheme: KCheckboxTheme.lightCheckBoxTheme,
     iconButtonTheme: IconButtonThemeData(
       style: IconButton.styleFrom(
-        foregroundColor: KAppColors.kwhite,
+        foregroundColor: KAppColors.kblack,
       ),
     ),
   );
 
   static ThemeData darkTheme = ThemeData(
+    bottomNavigationBarTheme: const BottomNavigationBarThemeData(
+      backgroundColor: KAppColors.kblack,
+    ),
     useMaterial3: true,
     brightness: Brightness.dark,
     primaryColor: Colors.black,

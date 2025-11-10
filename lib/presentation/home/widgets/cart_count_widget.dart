@@ -1,5 +1,6 @@
 import 'package:clot/utils/constants/app_colors.dart';
 import 'package:flutter/material.dart';
+import 'package:iconsax/iconsax.dart';
 
 class CartCountWidget extends StatelessWidget {
   const CartCountWidget({super.key});
@@ -13,7 +14,8 @@ class CartCountWidget extends StatelessWidget {
           radius: 25,
           child: IconButton(
             icon: const Icon(
-              Icons.shopping_bag_outlined,
+              Iconsax.shopping_bag,
+              color: KAppColors.kwhite,
             ),
             onPressed: () {},
           ),

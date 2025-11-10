@@ -1,8 +1,8 @@
 import 'package:clot/presentation/auth/create_account/create_account_screen.dart';
 import 'package:clot/presentation/auth/forgot_password/forgot_password_screen.dart';
-import 'package:clot/presentation/home/home_screen.dart';
 import 'package:clot/widgets/app_button_widget.dart';
 import 'package:clot/widgets/app_textform_field_widget.dart';
+import 'package:clot/widgets/bottom_nav_widget.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
@@ -39,7 +39,7 @@ class SignInScreen extends StatelessWidget {
                 Navigator.of(context).push(
                   MaterialPageRoute(
                     builder: (context) {
-                      return const HomeScreen();
+                      return const BottomNavWidget();
                     },
                   ),
                 );
