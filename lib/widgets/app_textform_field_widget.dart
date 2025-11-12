@@ -26,6 +26,7 @@ class TextformFieldWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextFormField(
       decoration: InputDecoration(
+        hintStyle: hintStyle,
         suffixIcon: suffixIcon,
         prefixIcon: prefixIcon,
         labelText: labelText,

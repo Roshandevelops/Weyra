@@ -46,7 +46,7 @@ class CategoryNameWidget extends StatelessWidget {
                                 ? KAppColors.kwhite
                                 : KAppColors.lightFillColor,
                             borderRadius: BorderRadius.circular(100),
-                            image: DecorationImage(
+                            image: const DecorationImage(
                               image: NetworkImage(
                                 KImageStrings.sampleImage,
                               ),
