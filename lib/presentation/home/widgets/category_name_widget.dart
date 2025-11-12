@@ -24,7 +24,7 @@ class CategoryNameWidget extends StatelessWidget {
               height: 80,
               width: double.infinity,
               decoration: BoxDecoration(
-                color: KAppColors.kFillColor,
+                color: KAppColors.lightFillColor,
                 borderRadius: BorderRadius.circular(8),
               ),
               child: Stack(
@@ -42,7 +42,7 @@ class CategoryNameWidget extends StatelessWidget {
                         const SizedBox(width: 20),
                         Text(
                           "Category Name",
-                          style: Theme.of(context).textTheme.titleLarge,
+                          style: Theme.of(context).textTheme.titleSmall,
                         ),
                       ],
                     ),

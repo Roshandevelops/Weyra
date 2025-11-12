@@ -1,5 +1,6 @@
 import 'package:clot/presentation/home/widgets/section_header.dart';
 import 'package:clot/utils/constants/app_colors.dart';
+import 'package:clot/utils/constants/image_strings.dart';
 import 'package:flutter/material.dart';
 
 class CategoryItemWidget extends StatelessWidget {
@@ -37,18 +38,17 @@ class CategoryItemWidget extends StatelessWidget {
                     width: 60,
                     decoration: BoxDecoration(
                       image: const DecorationImage(
-                        image: NetworkImage(
-                          "https://bellard.org/bpg/2.png",
-                        ),
+                        image: NetworkImage(KImageStrings.sampleImage),
                         fit: BoxFit.cover,
                       ),
-                      color: KAppColors.kFillColor,
+                      color: KAppColors.lightFillColor,
                       borderRadius: BorderRadius.circular(60),
                     ),
                   ),
                   const SizedBox(height: 10),
                   Text(
                     categories[index],
+                    style: Theme.of(context).textTheme.bodyLarge,
                   )
                 ],
               );

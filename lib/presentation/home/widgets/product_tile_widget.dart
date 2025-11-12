@@ -1,4 +1,5 @@
 import 'package:clot/utils/constants/app_colors.dart';
+import 'package:clot/utils/constants/image_strings.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 
@@ -11,13 +12,13 @@ class ProductTileWidget extends StatelessWidget {
       margin: const EdgeInsets.symmetric(horizontal: 10),
       width: 160,
       decoration: BoxDecoration(
-        color: KAppColors.kFillColor,
+        color: KAppColors.lightFillColor,
         borderRadius: BorderRadius.circular(8),
       ),
       child: Stack(
         children: [
           Image.network(
-            "https://bellard.org/bpg/2.png",
+            KImageStrings.sampleImage,
             height: 200,
             width: 160,
             fit: BoxFit.cover,
@@ -34,7 +35,7 @@ class ProductTileWidget extends StatelessWidget {
             child: Container(
               height: 80,
               decoration: const BoxDecoration(
-                color: KAppColors.kFillColor,
+                color: KAppColors.lightFillColor,
                 borderRadius: BorderRadius.only(
                   bottomLeft: Radius.circular(8),
                   bottomRight: Radius.circular(8),

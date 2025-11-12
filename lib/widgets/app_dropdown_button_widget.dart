@@ -1,5 +1,3 @@
-import 'package:clot/utils/constants/app_colors.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class AppDropdownButtonWidget extends StatefulWidget {
@@ -9,9 +7,14 @@ class AppDropdownButtonWidget extends StatefulWidget {
     required this.items,
     required this.hintText,
     required this.onChanged,
-    this.fillColor = KAppColors.kFillColor,
+    this.fillColor,
     this.border,
     this.inputDecoration = const InputDecoration(),
+    this.icon,
+    this.borderRadius = const BorderRadius.all(
+      Radius.circular(10),
+    ),
+    this.style,
   });
   final Color? fillColor;
   final InputBorder? border;
@@ -20,6 +23,9 @@ class AppDropdownButtonWidget extends StatefulWidget {
   final String? hintText;
   final TextStyle? hintStyle;
   final InputDecoration inputDecoration;
+  final Widget? icon;
+  final BorderRadius? borderRadius;
+  final TextStyle? style;
 
   @override
   State<AppDropdownButtonWidget> createState() =>
@@ -58,16 +64,13 @@ class _AppDropdownButtonWidgetState extends State<AppDropdownButtonWidget> {
     return DropdownButtonFormField(
       hint: Text(
         widget.hintText ?? "",
-        style: Theme.of(context).textTheme.titleSmall,
+        style: widget.style,
       ),
       decoration: inputDecoration,
-      borderRadius: BorderRadius.circular(10),
+      borderRadius: widget.borderRadius,
       items: widget.items,
       onChanged: widget.onChanged,
-      icon: const Icon(
-        CupertinoIcons.chevron_down,
-        color: KAppColors.kblack,
-      ),
+      icon: widget.icon,
     );
   }
 }

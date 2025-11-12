@@ -5,6 +5,7 @@ import 'package:clot/presentation/home/widgets/gender_dropdown_widget.dart';
 import 'package:clot/presentation/home/widgets/product_listview_card_widget.dart';
 import 'package:clot/presentation/home/widgets/search_widget.dart';
 import 'package:clot/presentation/home/widgets/section_header.dart';
+import 'package:clot/utils/constants/image_strings.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -26,7 +27,7 @@ class _HomeScreenState extends State<HomeScreen> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               CircleAvatar(
-                backgroundImage: NetworkImage("https://bellard.org/bpg/2.png"),
+                backgroundImage: NetworkImage(KImageStrings.sampleImage),
                 radius: 28,
               ),
               GenderDropdownWidget(),

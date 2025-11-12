@@ -1,6 +1,7 @@
 import 'package:clot/utils/constants/app_colors.dart';
 import 'package:clot/widgets/app_textform_field_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:iconsax/iconsax.dart';
 
 class SearchWidget extends StatelessWidget {
   const SearchWidget({super.key});
@@ -20,8 +21,9 @@ class SearchWidget extends StatelessWidget {
           borderSide: BorderSide.none,
         ),
         prefixIcon: const Icon(
-          Icons.search,
+          Iconsax.search_normal_1,
           color: KAppColors.kblack,
+          fontWeight: FontWeight.bold,
         ),
       ),
     );

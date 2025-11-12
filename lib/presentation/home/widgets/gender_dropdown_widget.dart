@@ -1,5 +1,6 @@
 import 'package:clot/widgets/app_dropdown_button_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:iconsax/iconsax.dart';
 
 class GenderDropdownWidget extends StatefulWidget {
   const GenderDropdownWidget({super.key});
@@ -15,6 +16,12 @@ class _GenderDropdownWidgetState extends State<GenderDropdownWidget> {
     return SizedBox(
       width: 150,
       child: AppDropdownButtonWidget(
+        borderRadius: BorderRadius.circular(10),
+        icon: const Icon(
+          Iconsax.arrow_down_1,
+          fontWeight: FontWeight.bold,
+          color: Colors.black,
+        ),
         hintText: "Men",
         items: const [
           DropdownMenuItem(
@@ -22,21 +29,26 @@ class _GenderDropdownWidgetState extends State<GenderDropdownWidget> {
             child: Text(
               " Men",
               style: TextStyle(
-                  fontFamily: "Gabarito", fontWeight: FontWeight.w700),
+                fontFamily: "Gabarito",
+                fontWeight: FontWeight.w700,
+              ),
             ),
           ),
           DropdownMenuItem(
             value: "Women",
             child: Text(
               " Women",
-              style: TextStyle(fontFamily: "Gabarito"),
+              style: TextStyle(
+                fontFamily: "Gabarito",
+                fontWeight: FontWeight.w700,
+              ),
             ),
           ),
         ],
         onChanged: (Object? value) {
           setState(
             () {
-              selectedGender = value as String?;
+              selectedGender = value.toString();
             },
           );
         },

@@ -1,23 +1,26 @@
 import 'package:clot/presentation/auth/signin/signin_screen.dart';
 import 'package:clot/utils/constants/app_colors.dart';
+import 'package:clot/utils/helper/helper_functions.dart';
 import 'package:clot/widgets/app_button_widget.dart';
 import 'package:clot/widgets/app_dropdown_button_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:iconsax/iconsax.dart';
 
-class DetailsScreen extends StatefulWidget {
-  const DetailsScreen({super.key});
+class UserDetailsScreen extends StatefulWidget {
+  const UserDetailsScreen({super.key});
 
   @override
-  State<DetailsScreen> createState() => _DetailsScreenState();
+  State<UserDetailsScreen> createState() => _UserDetailsScreenState();
 }
 
-class _DetailsScreenState extends State<DetailsScreen> {
+class _UserDetailsScreenState extends State<UserDetailsScreen> {
   bool isMenSelected = true;
   final ageRanges = ["18-24", "25-34", "35-44", "45-60", "60 & Above"];
   String? selectedValue;
 
   @override
   Widget build(BuildContext context) {
+    final isDarkMode = KHelperFunctions.isDarkMode(context);
     return Scaffold(
       // showAppBar: true,
       body: SingleChildScrollView(
@@ -44,37 +47,49 @@ class _DetailsScreenState extends State<DetailsScreen> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  SizedBox(
-                    width: 161,
-                    child: AppButtonWidget(
-                      backgroundColor: isMenSelected
-                          ? KAppColors.primaryColor
-                          : KAppColors.kFillColor,
-                      buttonText: "Men",
-                      textColor:
-                          isMenSelected ? KAppColors.kwhite : KAppColors.kblack,
-                      onTap: () {
-                        setState(() {
-                          isMenSelected = true;
-                        });
-                      },
+                  Expanded(
+                    child: SizedBox(
+                      child: AppButtonWidget(
+                        backgroundColor: isMenSelected
+                            ? KAppColors.primaryColor
+                            : (isDarkMode
+                                ? KAppColors.darkFillColor
+                                : KAppColors.lightFillColor),
+                        buttonText: "Men",
+                        textColor: isMenSelected
+                            ? KAppColors.kwhite
+                            : isDarkMode
+                                ? KAppColors.kwhite
+                                : KAppColors.kblack,
+                        onTap: () {
+                          setState(() {
+                            isMenSelected = true;
+                          });
+                        },
+                      ),
                     ),
                   ),
-                  SizedBox(
-                    width: 161,
-                    child: AppButtonWidget(
-                      backgroundColor: !isMenSelected
-                          ? KAppColors.primaryColor
-                          : KAppColors.kFillColor,
-                      buttonText: "Women",
-                      textColor: !isMenSelected
-                          ? KAppColors.kwhite
-                          : KAppColors.kblack,
-                      onTap: () {
-                        setState(() {
-                          isMenSelected = false;
-                        });
-                      },
+                  const SizedBox(width: 30),
+                  Expanded(
+                    child: SizedBox(
+                      child: AppButtonWidget(
+                        backgroundColor: !isMenSelected
+                            ? KAppColors.primaryColor
+                            : (isDarkMode
+                                ? KAppColors.darkFillColor
+                                : KAppColors.lightFillColor),
+                        buttonText: "Women",
+                        textColor: !isMenSelected
+                            ? KAppColors.kwhite
+                            : isDarkMode
+                                ? KAppColors.kwhite
+                                : KAppColors.kblack,
+                        onTap: () {
+                          setState(() {
+                            isMenSelected = false;
+                          });
+                        },
+                      ),
                     ),
                   ),
                 ],
@@ -86,7 +101,19 @@ class _DetailsScreenState extends State<DetailsScreen> {
               ),
               const SizedBox(height: 13),
               AppDropdownButtonWidget(
-                hintStyle: Theme.of(context).textTheme.titleSmall,
+                icon: Icon(
+                  Iconsax.arrow_down_1,
+                  color: isDarkMode ? KAppColors.kwhite : KAppColors.kblack,
+                ),
+                fillColor: isDarkMode
+                    ? KAppColors.darkFillColor
+                    : KAppColors.lightFillColor,
+                style: TextStyle(
+                  color: isDarkMode ? KAppColors.kwhite : KAppColors.kblack,
+                ),
+                hintStyle: TextStyle(
+                  color: isDarkMode ? KAppColors.kwhite : KAppColors.kblack,
+                ),
                 hintText: "Age Range",
                 items: ageRanges.map(
                   (age) {

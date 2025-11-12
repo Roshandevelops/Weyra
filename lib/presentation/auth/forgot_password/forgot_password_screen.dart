@@ -1,15 +1,17 @@
 import 'package:clot/presentation/auth/reset_password/reset_password_screen.dart';
 import 'package:clot/utils/constants/app_colors.dart';
+import 'package:clot/utils/helper/helper_functions.dart';
 import 'package:clot/widgets/app_button_widget.dart';
 import 'package:clot/widgets/app_textform_field_widget.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:iconsax/iconsax.dart';
 
 class ForgotPasswordScreen extends StatelessWidget {
   const ForgotPasswordScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final isDarkMode = KHelperFunctions.isDarkMode(context);
     return Scaffold(
       body: ListView(
         padding: const EdgeInsets.symmetric(horizontal: 24),
@@ -27,9 +29,16 @@ class ForgotPasswordScreen extends StatelessWidget {
               child: Container(
                 height: 40,
                 width: 40,
-                decoration: const BoxDecoration(
-                    color: KAppColors.kFillColor, shape: BoxShape.circle),
-                child: const Icon(CupertinoIcons.left_chevron),
+                decoration: BoxDecoration(
+                  color: isDarkMode
+                      ? KAppColors.darkFillColor
+                      : KAppColors.lightFillColor,
+                  shape: BoxShape.circle,
+                ),
+                child: Icon(
+                  Iconsax.arrow_left_2,
+                  color: isDarkMode ? KAppColors.kwhite : KAppColors.kblack,
+                ),
               ),
             ),
           ),

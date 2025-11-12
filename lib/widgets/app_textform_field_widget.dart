@@ -1,16 +1,19 @@
 import 'package:clot/utils/constants/app_colors.dart';
+import 'package:clot/utils/helper/helper_functions.dart';
 import 'package:flutter/material.dart';
 
 class TextformFieldWidget extends StatelessWidget {
-  const TextformFieldWidget(
-      {super.key,
-      this.labelText,
-      this.hintText,
-      this.prefixIcon,
-      this.suffixIcon,
-      this.border,
-      this.borderRadius,
-      this.hintStyle});
+  const TextformFieldWidget({
+    super.key,
+    this.labelText,
+    this.hintText,
+    this.prefixIcon,
+    this.suffixIcon,
+    this.border,
+    this.borderRadius,
+    this.hintStyle,
+    this.fillColor = Colors.white,
+  });
 
   final String? labelText;
   final String? hintText;
@@ -19,9 +22,11 @@ class TextformFieldWidget extends StatelessWidget {
   final InputBorder? border;
   final double? borderRadius;
   final TextStyle? hintStyle;
+  final Color? fillColor;
 
   @override
   Widget build(BuildContext context) {
+    final isDarkMode = KHelperFunctions.isDarkMode(context);
     return TextFormField(
       decoration: InputDecoration(
         suffixIcon: suffixIcon,
@@ -29,9 +34,15 @@ class TextformFieldWidget extends StatelessWidget {
         labelText: labelText,
         hintText: hintText,
         filled: true,
-        fillColor: KAppColors.kFillColor,
-        hintStyle: hintStyle ?? TextStyle(color: KAppColors.hintLabelColor),
-        labelStyle: TextStyle(color: KAppColors.hintLabelColor),
+        fillColor:
+            isDarkMode ? KAppColors.darkFillColor : KAppColors.lightFillColor,
+        //  KAppColors.kFillColor,
+        hintStyle: isDarkMode
+            ? TextStyle(color: KAppColors.hintLabelDarktColor)
+            : TextStyle(color: KAppColors.hintLabelLightColor),
+        labelStyle: isDarkMode
+            ? TextStyle(color: KAppColors.hintLabelDarktColor)
+            : TextStyle(color: KAppColors.hintLabelLightColor),
         // Border when the field is enabled (not focused)
         enabledBorder: border ??
             OutlineInputBorder(

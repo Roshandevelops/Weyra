@@ -28,7 +28,7 @@ class CategoryGridScreen extends StatelessWidget {
                   height: 40,
                   width: 40,
                   decoration: const BoxDecoration(
-                    color: KAppColors.kFillColor,
+                    color: KAppColors.lightFillColor,
                     shape: BoxShape.circle,
                   ),
                   child: const Icon(CupertinoIcons.left_chevron),

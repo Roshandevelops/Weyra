@@ -1,15 +1,17 @@
-import 'package:clot/presentation/auth/details/details_screen.dart';
+import 'package:clot/presentation/auth/details/user_details_screen.dart';
 import 'package:clot/utils/constants/app_colors.dart';
+import 'package:clot/utils/helper/helper_functions.dart';
 import 'package:clot/widgets/app_button_widget.dart';
 import 'package:clot/widgets/app_textform_field_widget.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:iconsax/iconsax.dart';
 
 class CreateAccountScreen extends StatelessWidget {
   const CreateAccountScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final isDarkMode = KHelperFunctions.isDarkMode(context);
     return Scaffold(
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 24),
@@ -29,11 +31,16 @@ class CreateAccountScreen extends StatelessWidget {
                 child: Container(
                   height: 40,
                   width: 40,
-                  decoration: const BoxDecoration(
-                    color: KAppColors.kFillColor,
+                  decoration: BoxDecoration(
+                    color: isDarkMode
+                        ? KAppColors.darkFillColor
+                        : KAppColors.lightFillColor,
                     shape: BoxShape.circle,
                   ),
-                  child: const Icon(CupertinoIcons.left_chevron),
+                  child: Icon(
+                    Iconsax.arrow_left_2,
+                    color: isDarkMode ? KAppColors.kwhite : KAppColors.kblack,
+                  ),
                 ),
               ),
             ),
@@ -70,7 +77,7 @@ class CreateAccountScreen extends StatelessWidget {
               onTap: () {
                 Navigator.of(context).push(
                   MaterialPageRoute(
-                    builder: (context) => const DetailsScreen(),
+                    builder: (context) => const UserDetailsScreen(),
                   ),
                 );
               },
