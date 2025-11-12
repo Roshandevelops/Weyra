@@ -107,12 +107,8 @@ class _UserDetailsScreenState extends State<UserDetailsScreen> {
                 fillColor: isDarkMode
                     ? KAppColors.darkFillColor
                     : KAppColors.lightFillColor,
-                style: TextStyle(
-                  color: isDarkMode ? KAppColors.kwhite : KAppColors.kblack,
-                ),
-                hintStyle: TextStyle(
-                  color: isDarkMode ? KAppColors.kwhite : KAppColors.kblack,
-                ),
+                style: Theme.of(context).textTheme.titleSmall,
+                borderRadius: BorderRadius.circular(16),
                 hintText: "Age Range",
                 items: ageRanges.map(
                   (age) {
