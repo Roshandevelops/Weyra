@@ -37,9 +37,8 @@ class CreateAccountScreen extends StatelessWidget {
                         : KAppColors.lightFillColor,
                     shape: BoxShape.circle,
                   ),
-                  child: Icon(
+                  child: const Icon(
                     Iconsax.arrow_left_2,
-                    color: isDarkMode ? KAppColors.kwhite : KAppColors.kblack,
                   ),
                 ),
               ),
@@ -51,21 +50,25 @@ class CreateAccountScreen extends StatelessWidget {
             ),
             const SizedBox(height: 32),
             const TextformFieldWidget(
+              border: OutlineInputBorder(borderSide: BorderSide.none),
               labelText: "Firstname",
               hintText: "Firstname",
             ),
             const SizedBox(height: 16),
             const TextformFieldWidget(
+              border: OutlineInputBorder(borderSide: BorderSide.none),
               labelText: "Lastname",
               hintText: "Lastname",
             ),
             const SizedBox(height: 16),
             const TextformFieldWidget(
+              border: OutlineInputBorder(borderSide: BorderSide.none),
               labelText: "Email Address",
               hintText: "Email",
             ),
             const SizedBox(height: 16),
             const TextformFieldWidget(
+              border: OutlineInputBorder(borderSide: BorderSide.none),
               labelText: "Enter Password",
               hintText: "password",
             ),

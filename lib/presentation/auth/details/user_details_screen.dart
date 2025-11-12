@@ -22,7 +22,6 @@ class _UserDetailsScreenState extends State<UserDetailsScreen> {
   Widget build(BuildContext context) {
     final isDarkMode = KHelperFunctions.isDarkMode(context);
     return Scaffold(
-      // showAppBar: true,
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 24),

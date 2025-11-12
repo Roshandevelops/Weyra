@@ -7,38 +7,42 @@ class CartCountWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      children: [
-        CircleAvatar(
-          backgroundColor: KAppColors.primaryColor,
-          radius: 25,
-          child: IconButton(
-            icon: const Icon(
-              Iconsax.shopping_bag,
-              color: KAppColors.kwhite,
+    return SizedBox(
+      height: 40,
+      width: 40,
+      child: Stack(
+        children: [
+          CircleAvatar(
+            backgroundColor: KAppColors.primaryColor,
+            radius: 25,
+            child: IconButton(
+              icon: const Icon(
+                Iconsax.shopping_bag,
+                color: KAppColors.kwhite,
+              ),
+              onPressed: () {},
             ),
-            onPressed: () {},
           ),
-        ),
-        Positioned(
-          right: 4,
-          top: 4,
-          child: Container(
-            padding: const EdgeInsets.all(4),
-            decoration: const BoxDecoration(
-              color: Colors.red,
-              shape: BoxShape.circle,
-            ),
-            child: const Text(
-              "3",
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: 12,
+          Positioned(
+            right: 4,
+            top: 4,
+            child: Container(
+              padding: const EdgeInsets.all(4),
+              decoration: const BoxDecoration(
+                color: Colors.red,
+                shape: BoxShape.circle,
+              ),
+              child: const Text(
+                "3",
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 12,
+                ),
               ),
             ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }

@@ -1,3 +1,4 @@
+import 'package:clot/utils/constants/app_colors.dart';
 import 'package:flutter/material.dart';
 
 class KTextFormFieldTheme {
@@ -6,9 +7,12 @@ class KTextFormFieldTheme {
   /// Textform Light Theme
 
   static InputDecorationTheme lightInputDecorationTheme = InputDecorationTheme(
+    iconColor: KAppColors.kblack,
+    filled: true,
+    fillColor: KAppColors.lightFillColor,
     errorMaxLines: 3,
-    prefixIconColor: Colors.grey,
-    suffixIconColor: Colors.red,
+    prefixIconColor: Colors.black,
+    suffixIconColor: Colors.black,
     labelStyle: const TextStyle().copyWith(fontSize: 14, color: Colors.black),
     hintStyle: const TextStyle().copyWith(fontSize: 14, color: Colors.black),
     errorStyle: const TextStyle().copyWith(fontStyle: FontStyle.normal),
@@ -45,9 +49,12 @@ class KTextFormFieldTheme {
   /// Textform Dark Theme
 
   static InputDecorationTheme darkInputDecorationTheme = InputDecorationTheme(
+    iconColor: KAppColors.kwhite,
+    filled: true,
+    fillColor: KAppColors.darkFillColor,
     errorMaxLines: 3,
-    prefixIconColor: Colors.grey,
-    suffixIconColor: Colors.red,
+    prefixIconColor: Colors.white,
+    suffixIconColor: Colors.white,
     labelStyle: const TextStyle().copyWith(fontSize: 14, color: Colors.white),
     hintStyle: const TextStyle().copyWith(fontSize: 14, color: Colors.white),
     errorStyle: const TextStyle().copyWith(fontStyle: FontStyle.normal),

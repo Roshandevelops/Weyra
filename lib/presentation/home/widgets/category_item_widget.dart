@@ -48,7 +48,6 @@ class CategoryItemWidget extends StatelessWidget {
                   const SizedBox(height: 10),
                   Text(
                     categories[index],
-                    style: Theme.of(context).textTheme.bodyLarge,
                   )
                 ],
               );

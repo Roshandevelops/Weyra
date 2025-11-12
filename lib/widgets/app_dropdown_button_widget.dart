@@ -7,7 +7,7 @@ class AppDropdownButtonWidget extends StatefulWidget {
     required this.items,
     required this.hintText,
     required this.onChanged,
-    this.fillColor,
+    required this.fillColor,
     this.border,
     this.inputDecoration = const InputDecoration(),
     this.icon,
@@ -15,6 +15,7 @@ class AppDropdownButtonWidget extends StatefulWidget {
       Radius.circular(10),
     ),
     this.style,
+    this.initialValue,
   });
   final Color? fillColor;
   final InputBorder? border;
@@ -26,6 +27,7 @@ class AppDropdownButtonWidget extends StatefulWidget {
   final Widget? icon;
   final BorderRadius? borderRadius;
   final TextStyle? style;
+  final Object? initialValue;
 
   @override
   State<AppDropdownButtonWidget> createState() =>
@@ -37,7 +39,7 @@ class _AppDropdownButtonWidgetState extends State<AppDropdownButtonWidget> {
   Widget build(BuildContext context) {
     final InputDecoration inputDecoration = InputDecoration(
       hintStyle: widget.hintStyle,
-      contentPadding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+      contentPadding: const EdgeInsets.symmetric(horizontal: 20, vertical: 0),
       filled: true,
       fillColor: widget.fillColor,
       border: widget.border ??
@@ -62,6 +64,7 @@ class _AppDropdownButtonWidgetState extends State<AppDropdownButtonWidget> {
           ),
     );
     return DropdownButtonFormField(
+      initialValue: widget.initialValue,
       hint: Text(
         widget.hintText ?? "",
         style: widget.style,

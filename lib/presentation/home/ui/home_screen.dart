@@ -21,17 +21,22 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
-        title: const Padding(
+        title: Padding(
           padding: EdgeInsets.symmetric(horizontal: 16),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              CircleAvatar(
-                backgroundImage: NetworkImage(KImageStrings.sampleImage),
-                radius: 28,
+              Container(
+                height: 40,
+                width: 40,
+                decoration: const BoxDecoration(
+                  image: DecorationImage(
+                      image: NetworkImage(KImageStrings.sampleImage)),
+                  shape: BoxShape.circle,
+                ),
               ),
-              GenderDropdownWidget(),
-              CartCountWidget(),
+              const GenderDropdownWidget(),
+              const CartCountWidget(),
             ],
           ),
         ),

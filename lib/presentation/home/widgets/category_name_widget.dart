@@ -1,5 +1,7 @@
 import 'package:clot/presentation/home/ui/category_grid_screen.dart';
 import 'package:clot/utils/constants/app_colors.dart';
+import 'package:clot/utils/constants/image_strings.dart';
+import 'package:clot/utils/helper/helper_functions.dart';
 import 'package:flutter/material.dart';
 
 class CategoryNameWidget extends StatelessWidget {
@@ -7,6 +9,7 @@ class CategoryNameWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isDarkMode = KHelperFunctions.isDarkMode(context);
     return Flexible(
       child: ListView.separated(
         itemBuilder: (context, index) {
@@ -21,10 +24,12 @@ class CategoryNameWidget extends StatelessWidget {
               );
             },
             child: Container(
-              height: 80,
+              height: 64,
               width: double.infinity,
               decoration: BoxDecoration(
-                color: KAppColors.lightFillColor,
+                color: isDarkMode
+                    ? KAppColors.darkFillColor
+                    : KAppColors.lightFillColor,
                 borderRadius: BorderRadius.circular(8),
               ),
               child: Stack(
@@ -32,12 +37,28 @@ class CategoryNameWidget extends StatelessWidget {
                   Positioned(
                     left: 16,
                     top: 10,
+                    bottom: 10,
                     child: Row(
                       children: [
-                        const CircleAvatar(
-                          radius: 25,
-                          backgroundImage:
-                              NetworkImage("https://bellard.org/bpg/2.png"),
+                        Container(
+                          decoration: BoxDecoration(
+                            color: isDarkMode
+                                ? KAppColors.kwhite
+                                : KAppColors.lightFillColor,
+                            borderRadius: BorderRadius.circular(100),
+                            image: DecorationImage(
+                              image: NetworkImage(
+                                KImageStrings.sampleImage,
+                              ),
+                            ),
+                          ),
+                          width: 40,
+                          height: 40,
+                          // child: const CircleAvatar(
+                          //   radius: 25,
+                          //   backgroundImage:
+                          //       NetworkImage(KImageStrings.sampleImage),
+                          // ),
                         ),
                         const SizedBox(width: 20),
                         Text(

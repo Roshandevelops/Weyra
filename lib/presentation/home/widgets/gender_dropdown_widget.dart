@@ -1,3 +1,5 @@
+import 'package:clot/utils/constants/app_colors.dart';
+import 'package:clot/utils/helper/helper_functions.dart';
 import 'package:clot/widgets/app_dropdown_button_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
@@ -13,14 +15,24 @@ class _GenderDropdownWidgetState extends State<GenderDropdownWidget> {
   String? selectedGender = "Men";
   @override
   Widget build(BuildContext context) {
+    final isDarkMode = KHelperFunctions.isDarkMode(context);
     return SizedBox(
       width: 150,
+      height: 40,
       child: AppDropdownButtonWidget(
-        borderRadius: BorderRadius.circular(10),
-        icon: const Icon(
+        initialValue: selectedGender,
+        hintStyle: TextStyle(
+          color: isDarkMode
+              ? KAppColors.hintLabelDarkColor
+              : KAppColors.hintLabelLightColor,
+        ),
+        fillColor:
+            isDarkMode ? KAppColors.darkFillColor : KAppColors.lightFillColor,
+        borderRadius: BorderRadius.circular(16),
+        icon: Icon(
           Iconsax.arrow_down_1,
           fontWeight: FontWeight.bold,
-          color: Colors.black,
+          color: isDarkMode ? KAppColors.kwhite : KAppColors.kblack,
         ),
         hintText: "Men",
         items: const [

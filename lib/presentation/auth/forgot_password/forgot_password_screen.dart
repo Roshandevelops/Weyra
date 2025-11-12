@@ -49,6 +49,7 @@ class ForgotPasswordScreen extends StatelessWidget {
           ),
           const SizedBox(height: 32),
           const TextformFieldWidget(
+            border: OutlineInputBorder(borderSide: BorderSide.none),
             labelText: "Email",
             hintText: "Enter Email Address",
           ),

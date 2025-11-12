@@ -1,5 +1,6 @@
 import 'package:clot/presentation/home/widgets/category_name_widget.dart';
 import 'package:clot/utils/constants/app_colors.dart';
+import 'package:clot/utils/helper/helper_functions.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -8,6 +9,7 @@ class CategoryListScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isDarkMode = KHelperFunctions.isDarkMode(context);
     return Scaffold(
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 24),
@@ -27,11 +29,15 @@ class CategoryListScreen extends StatelessWidget {
                 child: Container(
                   height: 40,
                   width: 40,
-                  decoration: const BoxDecoration(
-                    color: KAppColors.lightFillColor,
+                  decoration: BoxDecoration(
+                    color: isDarkMode
+                        ? KAppColors.darkFillColor
+                        : KAppColors.lightFillColor,
                     shape: BoxShape.circle,
                   ),
-                  child: const Icon(CupertinoIcons.left_chevron),
+                  child: const Icon(
+                    CupertinoIcons.left_chevron,
+                  ),
                 ),
               ),
             ),

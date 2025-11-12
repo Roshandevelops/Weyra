@@ -18,7 +18,7 @@ class KAppColors {
 
   static Color hintLabelLightColor =
       const Color(0xff272727).withValues(alpha: 0.5);
-  static Color hintLabelDarktColor =
+  static Color hintLabelDarkColor =
       const Color(0xffffffff).withValues(alpha: 0.5);
   static Color searchFieldItemColor = const Color(0xff272727);
 }

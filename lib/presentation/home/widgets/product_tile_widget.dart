@@ -1,5 +1,6 @@
 import 'package:clot/utils/constants/app_colors.dart';
 import 'package:clot/utils/constants/image_strings.dart';
+import 'package:clot/utils/helper/helper_functions.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 
@@ -8,6 +9,7 @@ class ProductTileWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isDarkMode = KHelperFunctions.isDarkMode(context);
     return Container(
       margin: const EdgeInsets.symmetric(horizontal: 10),
       width: 160,
@@ -34,8 +36,10 @@ class ProductTileWidget extends StatelessWidget {
             right: 0,
             child: Container(
               height: 80,
-              decoration: const BoxDecoration(
-                color: KAppColors.lightFillColor,
+              decoration: BoxDecoration(
+                color: isDarkMode
+                    ? KAppColors.darkFillColor
+                    : KAppColors.lightFillColor,
                 borderRadius: BorderRadius.only(
                   bottomLeft: Radius.circular(8),
                   bottomRight: Radius.circular(8),
