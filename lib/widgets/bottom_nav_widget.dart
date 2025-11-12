@@ -30,25 +30,30 @@ class _BottomNavWidgetState extends State<BottomNavWidget> {
     final isDarkMode = KHelperFunctions.isDarkMode(context);
     return Scaffold(
       body: _screens[selectedIndex],
-      bottomNavigationBar: GNav(
-        gap: 8,
-        color: isDarkMode
-            ? KAppColors.hintLabelDarkColor
-            : KAppColors.hintLabelLightColor,
-        activeColor: KAppColors.primaryColor,
-        iconSize: 24,
-        selectedIndex: selectedIndex,
-        onTabChange: (index) {
-          setState(() {
-            selectedIndex = index;
-          });
-        },
-        tabs: const [
-          GButton(icon: Iconsax.home),
-          GButton(icon: Iconsax.notification_bing),
-          GButton(icon: Iconsax.receipt),
-          GButton(icon: Iconsax.user),
-        ],
+      bottomNavigationBar: Padding(
+        padding: const EdgeInsets.symmetric(
+          horizontal: 16,
+        ),
+        child: GNav(
+          gap: 8,
+          color: isDarkMode
+              ? KAppColors.hintLabelDarkColor
+              : KAppColors.hintLabelLightColor,
+          activeColor: KAppColors.primaryColor,
+          iconSize: 24,
+          selectedIndex: selectedIndex,
+          onTabChange: (index) {
+            setState(() {
+              selectedIndex = index;
+            });
+          },
+          tabs: const [
+            GButton(icon: Iconsax.home),
+            GButton(icon: Iconsax.notification_bing),
+            GButton(icon: Iconsax.receipt),
+            GButton(icon: Iconsax.user),
+          ],
+        ),
       ),
     );
   }
