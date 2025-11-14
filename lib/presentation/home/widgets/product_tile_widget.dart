@@ -14,15 +14,14 @@ class ProductTileWidget extends StatelessWidget {
       margin: const EdgeInsets.symmetric(horizontal: 10),
       width: 160,
       decoration: BoxDecoration(
-        color: KAppColors.lightFillColor,
+        color: isDarkMode ? KAppColors.kwhite : KAppColors.lightFillColor,
         borderRadius: BorderRadius.circular(8),
       ),
       child: Stack(
         children: [
           Image.network(
             KImageStrings.sampleImage,
-            height: 200,
-            width: 160,
+            height: 180,
             fit: BoxFit.cover,
           ),
           const Positioned(
@@ -35,7 +34,7 @@ class ProductTileWidget extends StatelessWidget {
             left: 0,
             right: 0,
             child: Container(
-              height: 80,
+              height: 60,
               decoration: BoxDecoration(
                 color: isDarkMode
                     ? KAppColors.darkFillColor
@@ -45,7 +44,7 @@ class ProductTileWidget extends StatelessWidget {
                   bottomRight: Radius.circular(8),
                 ),
               ),
-              padding: const EdgeInsets.all(8),
+              padding: const EdgeInsets.symmetric(horizontal: 4),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
