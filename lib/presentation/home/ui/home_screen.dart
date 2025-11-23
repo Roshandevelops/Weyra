@@ -31,7 +31,8 @@ class _HomeScreenState extends State<HomeScreen> {
                 width: 40,
                 decoration: const BoxDecoration(
                   image: DecorationImage(
-                      image: NetworkImage(KImageStrings.sampleImage)),
+                    image: NetworkImage(KImageStrings.sampleImage),
+                  ),
                   shape: BoxShape.circle,
                 ),
               ),

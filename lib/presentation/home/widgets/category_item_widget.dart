@@ -10,13 +10,7 @@ class CategoryItemWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final categories = [
-      "Shirts",
-      "Pants",
-      "Shoes",
-      "Bags",
-      "Watches",
-    ];
+    final categories = ["Shirts", "Pants", "Shoes", "Bags", "Watches", "Hats"];
     return Column(
       children: [
         SectionHeader(
