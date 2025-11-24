@@ -36,63 +36,63 @@ class _OrderListScreenState extends State<OrderListScreen>
   Widget build(BuildContext context) {
     final isDarkMode = KHelperFunctions.isDarkMode(context);
     return Scaffold(
-        appBar: AppBar(
-          automaticallyImplyLeading: false,
-          centerTitle: true,
-          title: const Text(
-            'Orders',
-            style: TextStyle(
-              fontFamily: "gabarito",
-              fontSize: 20,
-              fontWeight: FontWeight.bold,
-            ),
+      appBar: AppBar(
+        automaticallyImplyLeading: false,
+        centerTitle: true,
+        title: const Text(
+          'Orders',
+          style: TextStyle(
+            fontFamily: "gabarito",
+            fontSize: 20,
+            fontWeight: FontWeight.bold,
           ),
         ),
-        body: Padding(
-          padding: const EdgeInsets.only(top: 20, left: 24, right: 24),
-          child: Column(
-            children: [
-              SizedBox(
-                height: 40,
-                child: TabBar(
-                  padding: EdgeInsets.zero,
-                  dividerColor: Colors.transparent,
-                  dividerHeight: 0,
-                  indicator: BoxDecoration(
-                    color: KAppColors.primaryColor,
-                    borderRadius: BorderRadius.circular(100),
-                  ),
-                  indicatorSize: TabBarIndicatorSize.tab,
-                  isScrollable: true,
-                  controller: tabController,
-                  labelColor:
-                      isDarkMode ? KAppColors.kwhite : KAppColors.kwhite,
-                  unselectedLabelColor:
-                      isDarkMode ? KAppColors.kwhite : KAppColors.dark,
-                  tabs: [
-                    Tab(text: "Processing"),
-                    Tab(text: "Shipped"),
-                    Tab(text: "Delivered"),
-                    Tab(text: "Returned"),
-                    Tab(text: "Cancel"),
-                  ],
+      ),
+      body: Padding(
+        padding: const EdgeInsets.only(top: 20, left: 24, right: 24),
+        child: Column(
+          children: [
+            SizedBox(
+              height: 40,
+              child: TabBar(
+                padding: EdgeInsets.zero,
+                dividerColor: Colors.transparent,
+                dividerHeight: 0,
+                indicator: BoxDecoration(
+                  color: KAppColors.primaryColor,
+                  borderRadius: BorderRadius.circular(100),
                 ),
+                indicatorSize: TabBarIndicatorSize.tab,
+                isScrollable: true,
+                controller: tabController,
+                labelColor: isDarkMode ? KAppColors.kwhite : KAppColors.kwhite,
+                unselectedLabelColor:
+                    isDarkMode ? KAppColors.kwhite : KAppColors.dark,
+                tabs: const [
+                  Tab(text: "Processing"),
+                  Tab(text: "Shipped"),
+                  Tab(text: "Delivered"),
+                  Tab(text: "Returned"),
+                  Tab(text: "Cancel"),
+                ],
               ),
-              SizedBox(height: 20),
-              Expanded(
-                child: TabBarView(
-                  children: [
-                    ProcessingTabWidget(),
-                    ShippingTabWidget(),
-                    DeliveredTabWidget(),
-                    ReturnedTabWidget(),
-                    CancelTabWidget(),
-                  ],
-                  controller: tabController,
-                ),
+            ),
+            const SizedBox(height: 20),
+            Expanded(
+              child: TabBarView(
+                controller: tabController,
+                children: const [
+                  ProcessingTabWidget(),
+                  ShippingTabWidget(),
+                  DeliveredTabWidget(),
+                  ReturnedTabWidget(),
+                  CancelTabWidget(),
+                ],
               ),
-            ],
-          ),
-        ));
+            ),
+          ],
+        ),
+      ),
+    );
   }
 }
