@@ -1,5 +1,4 @@
-import 'package:clot/presentation/home/widgets/list_view_tile_widget.dart';
-import 'package:clot/utils/helper/helper_functions.dart';
+import 'package:clot/widgets/list_view_tile_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 
@@ -8,7 +7,6 @@ class NotificationListScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final isDarkMode = KHelperFunctions.isDarkMode(context);
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
@@ -28,16 +26,19 @@ class NotificationListScreen extends StatelessWidget {
           children: [
             ListViewTileWidget(
               itemCount: 6,
-              enabled:true,
+              enabled: true,
               children: [
                 const Icon(Iconsax.notification_bing),
                 const SizedBox(width: 20),
-                Text(
-                  "Your order has been confirmed",
-                  style: Theme.of(context).textTheme.titleSmall,
+                Expanded(
+                  child: Text(
+                    maxLines: 2,
+                    overflow: TextOverflow.ellipsis,
+                    "Your order has been confirmed and will be shipped within 3 working days",
+                    style: Theme.of(context).textTheme.titleSmall,
+                  ),
                 ),
               ],
-              onTap: () {},
             )
           ],
         ),

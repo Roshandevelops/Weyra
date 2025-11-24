@@ -1,4 +1,4 @@
-import 'package:clot/presentation/home/ui/category_list_screen.dart';
+import 'package:clot/presentation/home/ui/shop_by_categories_screen.dart';
 import 'package:clot/presentation/home/widgets/cart_count_widget.dart';
 import 'package:clot/presentation/home/widgets/category_item_widget.dart';
 import 'package:clot/presentation/home/widgets/gender_dropdown_widget.dart';

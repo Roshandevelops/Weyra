@@ -1,6 +1,6 @@
 import 'package:clot/presentation/home/ui/home_screen.dart';
 import 'package:clot/presentation/notification_screen/ui/notification_screen.dart';
-import 'package:clot/presentation/order_screen/order_screen.dart';
+import 'package:clot/presentation/order_screen/ui/order_screen.dart';
 import 'package:clot/presentation/profile_screen/profile_screen.dart';
 import 'package:clot/utils/constants/app_colors.dart';
 import 'package:clot/utils/helper/helper_functions.dart';

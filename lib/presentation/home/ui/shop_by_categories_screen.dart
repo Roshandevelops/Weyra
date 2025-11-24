@@ -1,8 +1,8 @@
 import 'package:clot/presentation/home/ui/category_grid_screen.dart';
-import 'package:clot/presentation/home/widgets/list_view_tile_widget.dart';
 import 'package:clot/utils/constants/app_colors.dart';
 import 'package:clot/utils/constants/image_strings.dart';
 import 'package:clot/utils/helper/helper_functions.dart';
+import 'package:clot/widgets/list_view_tile_widget.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -50,6 +50,7 @@ class CategoryListScreen extends StatelessWidget {
             ),
             const SizedBox(height: 14),
             ListViewTileWidget(
+              mainAxisAlignment: MainAxisAlignment.start,
               itemCount: 4,
               enabled: false,
               children: [
@@ -69,9 +70,13 @@ class CategoryListScreen extends StatelessWidget {
                   height: 40,
                 ),
                 const SizedBox(width: 20),
-                Text(
-                  "Category Name",
-                  style: Theme.of(context).textTheme.titleSmall,
+                Expanded(
+                  child: Text(
+                    overflow: TextOverflow.ellipsis,
+                    maxLines: 2,
+                    "Category Name",
+                    style: Theme.of(context).textTheme.titleSmall,
+                  ),
                 ),
               ],
               onTap: () {
