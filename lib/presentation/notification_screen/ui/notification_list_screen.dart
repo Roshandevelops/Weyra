@@ -24,21 +24,23 @@ class NotificationListScreen extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 24),
         child: Column(
           children: [
-            ListViewTileWidget(
-              itemCount: 6,
-              enabled: true,
-              children: [
-                const Icon(Iconsax.notification_bing),
-                const SizedBox(width: 20),
-                Expanded(
-                  child: Text(
-                    maxLines: 2,
-                    overflow: TextOverflow.ellipsis,
-                    "Your order has been confirmed and will be shipped within 3 working days",
-                    style: Theme.of(context).textTheme.titleSmall,
+            Flexible(
+              child: ListViewTileWidget(
+                itemCount: 16,
+                enabled: true,
+                children: [
+                  const Icon(Iconsax.notification_bing),
+                  const SizedBox(width: 20),
+                  Expanded(
+                    child: Text(
+                      maxLines: 2,
+                      overflow: TextOverflow.ellipsis,
+                      "Your order has been confirmed and will be shipped within 3 working days",
+                      style: Theme.of(context).textTheme.titleSmall,
+                    ),
                   ),
-                ),
-              ],
+                ],
+              ),
             )
           ],
         ),

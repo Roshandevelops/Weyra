@@ -49,45 +49,47 @@ class CategoryListScreen extends StatelessWidget {
               style: Theme.of(context).textTheme.headlineLarge,
             ),
             const SizedBox(height: 14),
-            ListViewTileWidget(
-              mainAxisAlignment: MainAxisAlignment.start,
-              itemCount: 4,
-              enabled: false,
-              children: [
-                Container(
-                  decoration: BoxDecoration(
-                    color: isDarkMode
-                        ? KAppColors.kwhite
-                        : KAppColors.lightFillColor,
-                    borderRadius: BorderRadius.circular(100),
-                    image: const DecorationImage(
-                      image: NetworkImage(
-                        KImageStrings.sampleImage,
+            Flexible(
+              child: ListViewTileWidget(
+                mainAxisAlignment: MainAxisAlignment.start,
+                itemCount: 4,
+                enabled: false,
+                children: [
+                  Container(
+                    decoration: BoxDecoration(
+                      color: isDarkMode
+                          ? KAppColors.kwhite
+                          : KAppColors.lightFillColor,
+                      borderRadius: BorderRadius.circular(100),
+                      image: const DecorationImage(
+                        image: NetworkImage(
+                          KImageStrings.sampleImage,
+                        ),
                       ),
                     ),
+                    width: 40,
+                    height: 40,
                   ),
-                  width: 40,
-                  height: 40,
-                ),
-                const SizedBox(width: 20),
-                Expanded(
-                  child: Text(
-                    overflow: TextOverflow.ellipsis,
-                    maxLines: 2,
-                    "Category Name",
-                    style: Theme.of(context).textTheme.titleSmall,
+                  const SizedBox(width: 20),
+                  Expanded(
+                    child: Text(
+                      overflow: TextOverflow.ellipsis,
+                      maxLines: 2,
+                      "Category Name",
+                      style: Theme.of(context).textTheme.titleSmall,
+                    ),
                   ),
-                ),
-              ],
-              onTap: () {
-                Navigator.of(context).push(
-                  MaterialPageRoute(
-                    builder: (context) {
-                      return const CategoryGridScreen();
-                    },
-                  ),
-                );
-              },
+                ],
+                onTap: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (context) {
+                        return const CategoryGridScreen();
+                      },
+                    ),
+                  );
+                },
+              ),
             ),
           ],
         ),
