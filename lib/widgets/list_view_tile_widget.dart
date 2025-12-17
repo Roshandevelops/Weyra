@@ -5,14 +5,14 @@ import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:iconsax/iconsax.dart';
 
 class ListViewTileWidget extends StatelessWidget {
-  const ListViewTileWidget({
-    super.key,
-    this.onTap,
-    required this.children,
-    this.enabled = true,
-    required this.itemCount,
-    this.mainAxisAlignment = MainAxisAlignment.spaceBetween,
-  });
+  const ListViewTileWidget(
+      {super.key,
+      this.onTap,
+      required this.children,
+      this.enabled = true,
+      required this.itemCount,
+      this.mainAxisAlignment = MainAxisAlignment.spaceBetween,
+      this.physics = const BouncingScrollPhysics()});
 
   final void Function()? onTap;
   final int itemCount;
@@ -21,11 +21,14 @@ class ListViewTileWidget extends StatelessWidget {
 
   final MainAxisAlignment mainAxisAlignment;
 
+  final ScrollPhysics physics;
+
   @override
   Widget build(BuildContext context) {
     final isDarkMode = KHelperFunctions.isDarkMode(context);
     return SlidableAutoCloseBehavior(
       child: ListView.separated(
+        physics: physics,
         itemCount: itemCount,
         itemBuilder: (context, index) {
           return Slidable(
